@@ -17,7 +17,6 @@ import {
   awaitTransactionSignatureConfirmation,
   getCandyMachineState,
   mintOneToken,
-  shortenAddress,
 } from "./candy-machine";
 
 const ConnectButton = styled(WalletDialogButton)`
@@ -86,14 +85,14 @@ export interface HomeProps {
 }
 
 const Home = (props: HomeProps) => {
-  const [balance, setBalance] = useState<number>();
+  //const [balance, setBalance] = useState<number>();
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
 
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
-  const [itemsRemaining, setItemsRemaining] = useState(0);
+  //const [itemsRemaining, setItemsRemaining] = useState(0);
 
   const [alertState, setAlertState] = useState<AlertState>({
     open: false,
@@ -123,7 +122,7 @@ const Home = (props: HomeProps) => {
       );
 
       setItemsAvailable(itemsAvailable);
-      setItemsRemaining(itemsRemaining);
+      //setItemsRemaining(itemsRemaining);
       setItemsRedeemed(itemsRedeemed);
 
       setIsSoldOut(itemsRemaining === 0);
@@ -191,8 +190,8 @@ const Home = (props: HomeProps) => {
       });
     } finally {
       if (wallet) {
-        const balance = await props.connection.getBalance(wallet.publicKey);
-        setBalance(balance / LAMPORTS_PER_SOL);
+        //const balance = await props.connection.getBalance(wallet.publicKey);
+        //setBalance(balance / LAMPORTS_PER_SOL);
       }
       setIsMinting(false);
       refreshCandyMachineState();
@@ -202,8 +201,8 @@ const Home = (props: HomeProps) => {
   useEffect(() => {
     (async () => {
       if (wallet) {
-        const balance = await props.connection.getBalance(wallet.publicKey);
-        setBalance(balance / LAMPORTS_PER_SOL);
+        //const balance = await props.connection.getBalance(wallet.publicKey);
+        //setBalance(balance / LAMPORTS_PER_SOL);
       }
     })();
   }, [wallet, props.connection]);
