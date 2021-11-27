@@ -91,6 +91,7 @@ const Home = (props: HomeProps) => {
 
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
+  const [finalItemsAvailable,finalsetItemsAvailable]= useState(2222);
   //const [itemsRemaining, setItemsRemaining] = useState(0);
 
   const [alertState, setAlertState] = useState<AlertState>({
@@ -100,6 +101,7 @@ const Home = (props: HomeProps) => {
   });
 
   const [startDate, setStartDate] = useState(new Date(props.startDate));
+  
 
   const wallet = useAnchorWallet();
   const [candyMachine, setCandyMachine] = useState<CandyMachine>();
@@ -228,7 +230,7 @@ const Home = (props: HomeProps) => {
               <img src={image} alt="" title=""  data-description=""/>
               <Header>Mint</Header>
               <p>Price - 0.15 SOL</p>
-              {wallet && <p>Minted: {itemsRedeemed} / 2222 </p>}
+              {wallet && <p>Minted: {itemsRedeemed} / {finalItemsAvailable} </p>}
               <MintButton
                   disabled={isSoldOut || isMinting || !isActive}
                   onClick={onMint}
