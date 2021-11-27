@@ -228,7 +228,7 @@ const Home = (props: HomeProps) => {
               <img src={image} alt="" title=""  data-description=""/>
               <Header>Mint</Header>
               <p>Price - 0.15 SOL</p>
-              {wallet && <p>Minted: {itemsRedeemed} / {itemsAvailable}</p>}
+              {wallet && <p>Minted: {itemsRedeemed} / 2222 </p>}
               <MintButton
                   disabled={isSoldOut || isMinting || !isActive}
                   onClick={onMint}
