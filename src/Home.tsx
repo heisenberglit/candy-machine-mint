@@ -123,7 +123,7 @@ const Home = (props: HomeProps) => {
         props.connection
       );
 
-      setItemsAvailable(2222);
+       setItemsAvailable(itemsAvailable === 10000 ? 2222 : itemsAvailable);
       //setItemsRemaining(itemsRemaining);
       setItemsRedeemed(itemsRedeemed);
 
